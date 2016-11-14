@@ -6,7 +6,7 @@
 #    By: mgould <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/10 14:05:57 by mgould            #+#    #+#              #
-#    Updated: 2016/11/14 12:24:57 by bmiller          ###   ########.fr        #
+#    Updated: 2016/11/14 13:49:56 by mgould           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,16 +15,17 @@ FLAG = -Wall -Wextra -Werror
 OPTION = -I$(HEADER)
 O = src/
 L = lib/
-SRC = main.c $(L)my_strcat.c $(L)rec_strlen.c $(O)bisquick.c $(L)rec_putstr.c $(O)print_map.c
+SRC = main.c $(L)my_strcat.c $(L)rec_strlen.c $(O)bisquick.c $(L)rec_putstr.c \
+	 $(O)print_map.c $(O)map_stats.c
 DEST = -o a.out
 
 all:
 	gcc $(FLAG) $(OPTION) $(SRC) $(DEST)
 
 clean:
-	rm -f ft_display_file
+	rm -f a.out
 
 fclean: clean
-	rm -fr ft_display_file
+	rm -fr a.out
 
 re: fclean all
