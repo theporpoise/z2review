@@ -6,11 +6,11 @@
 /*   By: bmiller <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/13 20:35:10 by bmiller           #+#    #+#             */
-/*   Updated: 2016/11/14 09:31:52 by bmiller          ###   ########.fr       */
+/*   Updated: 2016/11/14 10:03:26 by mgould           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "bisquick.h"
+#include "../include/bisquick.h"
 
 char	*my_strcat(char *dest, char *src)
 {
