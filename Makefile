@@ -6,7 +6,7 @@
 #    By: mgould <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/10 14:05:57 by mgould            #+#    #+#              #
-#    Updated: 2016/11/14 10:06:45 by mgould           ###   ########.fr        #
+#    Updated: 2016/11/14 12:24:57 by bmiller          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ FLAG = -Wall -Wextra -Werror
 OPTION = -I$(HEADER)
 O = src/
 L = lib/
-SRC = main.c $(L)my_strcat.c $(L)rec_strlen.c $(O)bisquick.c
+SRC = main.c $(L)my_strcat.c $(L)rec_strlen.c $(O)bisquick.c $(L)rec_putstr.c $(O)print_map.c
 DEST = -o a.out
 
 all:

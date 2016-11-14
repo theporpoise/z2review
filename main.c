@@ -6,7 +6,7 @@
 /*   By: mgould <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/14 09:27:24 by mgould            #+#    #+#             */
-/*   Updated: 2016/11/14 10:47:01 by mgould           ###   ########.fr       */
+/*   Updated: 2016/11/14 12:23:48 by bmiller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,6 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 
-
-void print_square(char *map)
-{
-	printf("map is:\n%s", map);
-}
 
 // how big is square
 // what is the obstacle char
@@ -48,9 +43,10 @@ int	valid_map(char *map)
 		line = 1;
 		count = 0;
 	}
+	return (0);
 }
 
-int	*map_stats(char *map)
+/*int	*map_stats(char **map)
 {
 	int	*mstats;
 	int i;
@@ -59,19 +55,19 @@ int	*map_stats(char *map)
 	while (mstats)
 
 }
-
+*/
 int	main(int argc, char **argv)
 {
 	int		i;
-	char	*map;
-	int		*mstats;
+	char	**map;
+//	int		*mstats;
 
-	mstats = (int*)malloc(sizeof(int) * 4);
+//	mstats = (int*)malloc(sizeof(int) * 4);
 	i = 1;
 	if (argc < 2)
 	{
 		map = bisquick(0);
-		print_square(map);
+		print_map(map);
 	}
 	else if (argc > 1)
 	{
@@ -82,8 +78,8 @@ int	main(int argc, char **argv)
 			//mapsize
 			//largest square possible
 			//timjose while loop
-			print_square(map);
-			mstats = map_stats(map);
+			print_map(map);
+//			mstats = map_stats(map);
 			i++;
 		}
 	}

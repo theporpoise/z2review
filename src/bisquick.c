@@ -6,7 +6,7 @@
 /*   By: bmiller <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/14 09:19:59 by bmiller           #+#    #+#             */
-/*   Updated: 2016/11/14 12:00:18 by bmiller          ###   ########.fr       */
+/*   Updated: 2016/11/14 12:21:03 by bmiller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,12 @@ char		**bisquick(int rfd)
 		i[2] = 0;
 		while (i[2] < (int)bytes_read)
 		{
-			in = my_strcat(map[i[1]], (char*)(malloc(1)));
+			map[i[1]] = my_strcat(map[i[1]], (char*)(malloc(1)));
 			map[i[1]][i[0]] = buf[i[2]];
 			if (buf[i[2]] == '\n')
 				i[1]++;
 			i[2]++;
-			j[0]++;
+			i[0]++;
 		}
 	}
 	return (map);

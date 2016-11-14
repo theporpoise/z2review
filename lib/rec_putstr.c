@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   bisquick.h                                         :+:      :+:    :+:   */
+/*   rec_putstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmiller <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/14 09:27:43 by bmiller           #+#    #+#             */
-/*   Updated: 2016/11/14 12:15:53 by bmiller          ###   ########.fr       */
+/*   Created: 2016/11/14 12:18:12 by bmiller           #+#    #+#             */
+/*   Updated: 2016/11/14 12:25:20 by bmiller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BISQUICK_H
-# define BISQUICK_H
+#include <unistd.h>
 
-char	**bisquick(int rfd);
-char	*my_strcat(char *dest, char *src);
-int		rec_strlen(char *str);
-void	print_map(char **map);
-void	rec_putstr(char *str);
-
-#endif
+void	rec_putstr(char *str)
+{
+	if (*str)
+	{
+		write(1, str, 1);
+		rec_putstr(str + 1);
+	}
+	return ;
+}
