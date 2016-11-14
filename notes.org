@@ -2,5 +2,17 @@ for a rectangle with sides n and n + t
 
 numsquares = (1/6)*n(n + 1)(2n + 3t + 1)
 
+// if we reach this number and we haven't found anything, return map error.
+
 Start with the largest square
-Move left to right, top to bottom, if there is space 
+Move left to right, top to bottom, if there is space
+
+
+//MATT'S NOTES
+
+to run the perl script you pass in x, y, density to perl script.
+perlmap 5 10 1
+//generates 5 wide, 10 tall, 1 density map.
+
+
+
