@@ -6,7 +6,7 @@
 /*   By: mgould <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/14 09:27:24 by mgould            #+#    #+#             */
-/*   Updated: 2016/11/14 13:58:23 by mgould           ###   ########.fr       */
+/*   Updated: 2016/11/14 13:59:43 by mgould           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,13 +58,13 @@ int	main(int argc, char **argv)
 
 		while (argv[i])
 		{
-
+			/*
 			map = bisquick(open(argv[i], O_RDONLY));
 			//validmap
 			//mapsize
 			//largest square possible
 			//timjose while loop
-			/*
+
 			print_map(map);
 
 			if (!(mstats = map_stats(map)))
