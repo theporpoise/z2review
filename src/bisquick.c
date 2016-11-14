@@ -6,7 +6,7 @@
 /*   By: bmiller <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/14 09:19:59 by bmiller           #+#    #+#             */
-/*   Updated: 2016/11/14 09:34:23 by mgould           ###   ########.fr       */
+/*   Updated: 2016/11/14 11:56:12 by bmiller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,26 +17,27 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 
-char		*bisquick(int rfd)
+char		**bisquick(int rfd)
 {
-	int		i;
-	int		j;
+	int		i[3];
 	char	buf[1];
 	size_t	bytes_read;
-	char	*in;
+	char	**map;
 
-	in = (char*)(malloc(2));
-	j = 0;
+	map = (char**)(malloc(sizeof(char*) * 2));
+	i[0] = 0;
 	while ((bytes_read = read(rfd, buf, 1)))
 	{
-		i = 0;
-		while (i < (int)bytes_read)
+		i[2] = 0;
+		while (i[2] < (int)bytes_read)
 		{
-			in = my_strcat(in, (char*)(malloc(1)));
-			in[j] = buf[i];
-			i++;
-			j++;
+			if (buf[i[2]] == '\n')
+				i[1]++;
+			in = my_strcat(map[i[1]], (char*)(malloc(1)));
+			map[i[1]][i[0]] = buf[i[2]];
+			i[2]++;
+			j[0]++;
 		}
 	}
-	return (in);
+	return (map);
 }
