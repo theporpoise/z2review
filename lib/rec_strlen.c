@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   bisquick.h                                         :+:      :+:    :+:   */
+/*   rec_strlen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmiller <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/14 09:27:43 by bmiller           #+#    #+#             */
-/*   Updated: 2016/11/14 09:32:22 by bmiller          ###   ########.fr       */
+/*   Created: 2016/11/13 20:51:59 by bmiller           #+#    #+#             */
+/*   Updated: 2016/11/13 20:52:47 by bmiller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BISQUICK_H
-# define BISQUICK_H
-
-char	*bisquick(int rfd);
-void	my_strcat(char *dest, char *src);
-int		rec_strlen(char *str);
-
-#endif
+int		rec_strlen(char *str)
+{
+	if (*str)
+		return (1 + rec_strlen(str + 1));
+	return (0);
+}
