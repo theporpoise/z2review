@@ -6,15 +6,16 @@
 #    By: mgould <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/10 14:05:57 by mgould            #+#    #+#              #
-#    Updated: 2016/11/14 09:48:37 by mgould           ###   ########.fr        #
+#    Updated: 2016/11/14 10:06:45 by mgould           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-HEADER = /include/bisquick.h
+HEADER = include
 FLAG = -Wall -Wextra -Werror
-OPTION = -I $(HEADER)
-O = srcs/
-SRC = ft_main.c $(O)strcat.c $(O)bisquick.c
+OPTION = -I$(HEADER)
+O = src/
+L = lib/
+SRC = main.c $(L)my_strcat.c $(L)rec_strlen.c $(O)bisquick.c
 DEST = -o a.out
 
 all:

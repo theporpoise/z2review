@@ -6,19 +6,26 @@
 /*   By: mgould <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/14 09:27:24 by mgould            #+#    #+#             */
-/*   Updated: 2016/11/14 09:44:41 by mgould           ###   ########.fr       */
+/*   Updated: 2016/11/14 10:07:29 by mgould           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/bisquick.h"
 #include <stdio.h>
 
-void bsquare(char *map)
+#include <fcntl.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+
+
+void print_square(char *map)
 {
 	printf("map is:\n%s", map);
 }
 
-// max_size
+// how big is square
+// what is the obstacle char
 
 // parse_first_line
 
@@ -34,8 +41,9 @@ int	main(int argc, char **argv)
 	{
 		while (argv[i])
 		{
-			map = bisquick(open(argv[i]) | O_RDONLY);
-			bsquare(map);
+			map = bisquick(open(argv[i], O_RDONLY));
+			print_square(map);
+			i++;
 		}
 	}
 }
