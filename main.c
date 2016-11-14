@@ -6,7 +6,7 @@
 /*   By: mgould <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/14 09:27:24 by mgould            #+#    #+#             */
-/*   Updated: 2016/11/14 13:59:43 by mgould           ###   ########.fr       */
+/*   Updated: 2016/11/14 15:37:45 by mgould           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,11 @@ int	main(int argc, char **argv)
 	char	**map;
 	int		*mstats;
 	int		j;
+	int		*pos;
 
 	j = 0;
 	mstats = (int*)malloc(sizeof(int) * 5); //mstats has 5 stats
+	pos = (int*)malloc(sizeof(int) * 3); //mstats has 3 stats
 	i = 1;
 	if (argc < 2)
 	{
@@ -60,26 +62,27 @@ int	main(int argc, char **argv)
 		{
 			/*
 			map = bisquick(open(argv[i], O_RDONLY));
-			//validmap
-			//mapsize
-			//largest square possible
-			//timjose while loop
-
 			print_map(map);
-
-			if (!(mstats = map_stats(map)))
+			mstats = map_stats(map;)
+			if (!(mstats))
 			{
 				return (0);
 			}
-
 			while (j < 5)
 			{
 				printf("mstats %d is %d", j, mstats[j]);
 				j++;
 			}
+			// TimJoseWhileLoopFunction
+			pos = timjose(map, mstats)
+			if(!(pos))
+			{
+				return (0);
+			}
+			map = fill_map(map, pos, mstats);
+			print_map(map);
 			*/
 			i++;
 		}
 	}
-
 }

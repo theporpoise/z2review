@@ -1,10 +1,38 @@
-Hey Brett-
+Project Status:
 
-Currently the bisquick function is seg faulting.
+Next Milestone:
+Get a working first version that can take in a VALID map and print out the BSQ.
+This is a good first step.
 
-I'm unable to test the other code while that is down.
+Bugs:
+1)Bisquick function is seg faulting.
 
-If we need to, we cna just treat it as a single array, we don't have
-to parse it on input if that is easier.
+Needs Testing in Order:
+1)bisquick.c - makes the 2d array that is used by other functions
+2)print_map.c
+3)map_stats.c
+4)timjose.c
+5)fill_map.c
 
-Other than that, everything is looking good.!
+NEEDS REVIEW:
+ 1) TimJose while loop to find biggest square
+-takes in stats from map_stats
+-determines largest square area
+-tries each spot on the map to see if square will fit
+-reduce square size and keeps going until it finds
+-returns coordinates of first result
+2) FillMap - takes map, TimJose coords, and mstats to get char value,
+ and fills in the area of the map.
+
+Needs to be built:
+I think we have everything we need for MVP, just need testing and polish.
+
+Known Issues:
+map_stats - does not check for negative integers for line lenght, we
+can use atoi and do some checks, or maybe roll our own, to check
+it properly.  i'd prefer to ensure core functionality is working
+before tweaking input checks.  we can always add those on, whereas core
+functionality we need to agre on a method and it's much bigger so requires
+more communication.
+
+
