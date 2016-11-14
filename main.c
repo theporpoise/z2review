@@ -6,7 +6,7 @@
 /*   By: mgould <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/14 09:27:24 by mgould            #+#    #+#             */
-/*   Updated: 2016/11/14 12:23:48 by bmiller          ###   ########.fr       */
+/*   Updated: 2016/11/14 13:39:31 by mgould           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,50 +19,33 @@
 #include <sys/stat.h>
 
 
-// how big is square
-// what is the obstacle char
-
-// parse_first_line
-
-int	valid_map(char *map)
+void	print_square(char **map)
 {
 	int i;
-	int count;
-	int line;
+	int j;
 
-	line = 0;
-	i = 0;
-	count = 0;
-	while (map[i])
+	i = 1;
+	while(map[i][j])
 	{
-		while (map[count] != '\n')
+		j = 0;
+		while(map[i][j])
 		{
-			count++;
+			printf("%s", map[i][j]);
+			j++;
 		}
-		if (line > 0)
-		line = 1;
-		count = 0;
+		i++;
 	}
-	return (0);
 }
 
-/*int	*map_stats(char **map)
-{
-	int	*mstats;
-	int i;
-
-	i = 0;
-	while (mstats)
-
-}
-*/
 int	main(int argc, char **argv)
 {
 	int		i;
 	char	**map;
-//	int		*mstats;
+	int		*mstats;
+	int		j;
 
-//	mstats = (int*)malloc(sizeof(int) * 4);
+	j = 0;
+	mstats = (int*)malloc(sizeof(int) * 4);
 	i = 1;
 	if (argc < 2)
 	{
@@ -79,7 +62,12 @@ int	main(int argc, char **argv)
 			//largest square possible
 			//timjose while loop
 			print_map(map);
-//			mstats = map_stats(map);
+			mstats = map_stats(map);
+			while (j < 5)
+			{
+				printf("mstats %d is %d", j, mstats[j]);
+				j++
+			}
 			i++;
 		}
 	}
