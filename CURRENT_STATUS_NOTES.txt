@@ -1,0 +1,10 @@
+Hey Brett-
+
+Currently the bisquick function is seg faulting.
+
+I'm unable to test the other code while that is down.
+
+If we need to, we cna just treat it as a single array, we don't have
+to parse it on input if that is easier.
+
+Other than that, everything is looking good.!
