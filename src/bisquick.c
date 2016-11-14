@@ -6,7 +6,7 @@
 /*   By: bmiller <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/14 09:19:59 by bmiller           #+#    #+#             */
-/*   Updated: 2016/11/14 09:20:21 by bmiller          ###   ########.fr       */
+/*   Updated: 2016/11/14 09:34:23 by mgould           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 
-char		*bisquick(rfd)
+char		*bisquick(int rfd)
 {
 	int		i;
 	int		j;
