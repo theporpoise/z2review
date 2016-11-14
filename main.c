@@ -6,7 +6,7 @@
 /*   By: mgould <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/14 09:27:24 by mgould            #+#    #+#             */
-/*   Updated: 2016/11/14 15:37:45 by mgould           ###   ########.fr       */
+/*   Updated: 2016/11/14 15:47:55 by mgould           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,7 @@ int	main(int argc, char **argv)
 			}
 			map = fill_map(map, pos, mstats);
 			print_map(map);
+			ft_putchar('\n') //separate each map by a newline per instrutions
 			*/
 			i++;
 		}

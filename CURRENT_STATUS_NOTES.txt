@@ -25,14 +25,24 @@ NEEDS REVIEW:
  and fills in the area of the map.
 
 Needs to be built:
-I think we have everything we need for MVP, just need testing and polish.
+Error codes for each error
+-map is wrong format
+-map is full (could not find solution)
+-follow all error codes with line break.
+
+We MAY need to build an additional validator function, we can discuss.
 
 Known Issues:
-map_stats - does not check for negative integers for line lenght, we
+1)map_stats - does not check for negative integers for line lenght, we
 can use atoi and do some checks, or maybe roll our own, to check
 it properly.  i'd prefer to ensure core functionality is working
 before tweaking input checks.  we can always add those on, whereas core
 functionality we need to agre on a method and it's much bigger so requires
 more communication.
 
+2) It may make sense to build a separate "validator" function and send it
+through that before sending thorugh to map_stats.  there are actually a
+lot of things to validate, so i think this may make sense.  first i want
+to get it working with valid input though :-).
 
+3) NORM EVERYTHING!  obviously, we can do this at the end.
