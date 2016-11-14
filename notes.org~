@@ -1,0 +1,6 @@
+for a rectangle with sides n and n + t
+
+numsquares = (1/6)*n(n + 1)(2n + 3t + 1)
+
+Start with the largest square
+Move left to right, top to bottom, if there is space 
