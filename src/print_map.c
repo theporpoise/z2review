@@ -6,7 +6,7 @@
 /*   By: bmiller <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/14 12:13:31 by bmiller           #+#    #+#             */
-/*   Updated: 2016/11/14 12:14:59 by bmiller          ###   ########.fr       */
+/*   Updated: 2016/11/15 05:58:44 by bmiller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,13 @@
 
 void	print_map(char **map)
 {
-	if (**map)
+	int		i;
+
+	i = 0;
+	while (**(map + i))
 	{
-		rec_putstr(*map);
-		print_map(map + 1);
+		my_putstr(*(map + i));
+		i++;
 	}
 	return ;
 }

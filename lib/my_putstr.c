@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rec_putstr.c                                       :+:      :+:    :+:   */
+/*   my_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmiller <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/14 12:18:12 by bmiller           #+#    #+#             */
-/*   Updated: 2016/11/14 12:25:20 by bmiller          ###   ########.fr       */
+/*   Created: 2016/11/15 05:49:46 by bmiller           #+#    #+#             */
+/*   Updated: 2016/11/15 05:57:57 by bmiller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include <unistd.h>
 
-void	rec_putstr(char *str)
+void	my_putstr(char *str)
 {
-	if (*str)
+	int		i;
+
+	i = 0;
+	while (*(str + i))
 	{
-		write(1, str, 1);
-		rec_putstr(str + 1);
+		write(1, (str + i), 1);
+		i++;
 	}
 	return ;
 }

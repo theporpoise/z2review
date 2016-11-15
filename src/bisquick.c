@@ -6,7 +6,7 @@
 /*   By: bmiller <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/14 09:19:59 by bmiller           #+#    #+#             */
-/*   Updated: 2016/11/15 05:42:30 by bmiller          ###   ########.fr       */
+/*   Updated: 2016/11/15 05:55:12 by bmiller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int			*dimensions(char *in_str)
 	
 	meta_offset = linelen(in_str) + 1;
 	temp = (in_str + meta_offset);
-	if ((rec_strlen(temp) % 2) != 0)
+	if ((my_strlen(temp) % 2) != 0)
 		return (NULL);
 	dims = (int*)(malloc(sizeof(int) * 2));
 	dims[1] = 1;

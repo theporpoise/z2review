@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   my_strcat.c                                        :+:      :+:    :+:   */
+/*   my_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmiller <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/13 20:35:10 by bmiller           #+#    #+#             */
-/*   Updated: 2016/11/14 10:03:26 by mgould           ###   ########.fr       */
+/*   Created: 2016/11/15 05:51:51 by bmiller           #+#    #+#             */
+/*   Updated: 2016/11/15 05:51:55 by bmiller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/bisquick.h"
-
-char	*my_strcat(char *dest, char *src)
+int		my_strlen(char *str)
 {
-	if (*src)
+	int		i;
+
+	i = 0;
+	while (*(str + i))
 	{
-		*(dest + rec_strlen(dest)) = *src;
-		my_strcat(dest, (src + 1));
+		i++;
 	}
-	else
-		*(dest + rec_strlen(dest)) = '\0';
-	return dest;
+	return (i);
 }

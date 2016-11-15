@@ -6,13 +6,18 @@
 /*   By: mgould <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/14 10:46:25 by mgould            #+#    #+#             */
-/*   Updated: 2016/11/14 23:06:41 by bmiller          ###   ########.fr       */
+/*   Updated: 2016/11/15 05:52:42 by bmiller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		linelen(char *str)
 {
-	if (*str && (*str != '\n'))
-		return (1 + linelen(str + 1));
-	return (0);
+	int		i;
+
+	i = 0;
+	while (*(str + i) && (*(str + i) != '\n'))
+	{
+		i++;
+	}
+	return (i);
 }
