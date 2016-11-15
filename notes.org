@@ -8,6 +8,19 @@ Start with the largest square
 Move left to right, top to bottom, if there is space
 
 
+
+
+WE NEED TO REMOVE ALL RECURSIVE BASIC LIBRARY FUNCTIONS!!!! (maybe)
+they seem to exhaust the stack with very large inputs.
+I also set an arbitrarily large malloc to test.  Malloc-ing 1 byte at a time for
+arbitrarily large strings causes a huge performance bottleneck compared to
+malloc-ing a lot all at once.
+
+print_map now works... after changing the "locked function"
+bisquick is a bit larger than 25 lines now I think, but it should be a lot
+more readable.
+
+
 //MATT'S NOTES
 
 to run the perl script you pass in x, y, density to perl script.

@@ -6,7 +6,7 @@
 /*   By: bmiller <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/14 09:19:59 by bmiller           #+#    #+#             */
-/*   Updated: 2016/11/15 04:57:05 by bmiller          ###   ########.fr       */
+/*   Updated: 2016/11/15 05:42:30 by bmiller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 #include <fcntl.h>
 #include <sys/types.h>
 #include <sys/stat.h>
-#include <stdio.h>
 
 char		*bisquick_in(int rfd)
 {
@@ -26,7 +25,7 @@ char		*bisquick_in(int rfd)
 	size_t	bytes_read;
 	char	*in;
 
-	in = (char*)(malloc(900000000));
+	in = (char*)(malloc(9000000000));
 	j = 0;
 	while ((bytes_read = read(rfd, buf, 1)))
 	{
@@ -79,7 +78,12 @@ char		**bisquick(char *in_str, size_t x_dim, size_t y_dim)
 	y = 0;
 	i = 0;
 	arr = (char**)(malloc(sizeof(char*) * y_dim + 1));
-	arr[y] = (char*)(malloc(x_dim + 1));
+	while (i <= (int)y_dim)
+	{
+		arr[i] = (char*)(malloc((x_dim + 1)));
+		i++;
+	}
+	i = 0;
 	while (in_str[i])
 	{
 		if (in_str[i] == '\n')
@@ -87,7 +91,6 @@ char		**bisquick(char *in_str, size_t x_dim, size_t y_dim)
 			arr[y][x] = in_str[i];
 			arr[y][x + 1] = '\0';
 			y++;
-			arr[y] = (char*)(malloc(x_dim + 1));
 			x = 0;
 		}
 		else
