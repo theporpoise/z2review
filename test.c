@@ -16,7 +16,6 @@ int		main(int argc, char **argv)
 	else
 		map = bisquick_in(0);
 	dims = dimensions(map);
-	printf("dimensions of given map: x - %d, y - %d\n", dims[0], dims[1]);
 	print_map(bisquick(map, dims[0], dims[1]));
 	return (0);
 }

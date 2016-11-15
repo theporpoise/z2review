@@ -6,7 +6,7 @@
 /*   By: bmiller <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/14 09:19:59 by bmiller           #+#    #+#             */
-/*   Updated: 2016/11/15 04:49:14 by bmiller          ###   ########.fr       */
+/*   Updated: 2016/11/15 04:57:05 by bmiller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,6 @@ char		**bisquick(char *in_str, size_t x_dim, size_t y_dim)
 	x = 0;
 	y = 0;
 	i = 0;
-//	rec_putstr(in_str);
 	arr = (char**)(malloc(sizeof(char*) * y_dim + 1));
 	arr[y] = (char*)(malloc(x_dim + 1));
 	while (in_str[i])
@@ -91,10 +90,12 @@ char		**bisquick(char *in_str, size_t x_dim, size_t y_dim)
 			arr[y] = (char*)(malloc(x_dim + 1));
 			x = 0;
 		}
-		arr[y][x] = in_str[i];
-//		write(1, &arr[y][x], 1);
+		else
+		{
+			arr[y][x] = in_str[i];
+			x++;
+		}
 		i++;
-		x++;
 	}
 	return (arr);
 }
