@@ -6,7 +6,7 @@
 /*   By: mgould <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/14 13:47:22 by mgould            #+#    #+#             */
-/*   Updated: 2016/11/15 10:08:10 by mgould           ###   ########.fr       */
+/*   Updated: 2016/11/15 13:55:16 by mgould           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,30 +17,27 @@ int	*map_stats(char **map)
 {
 	int x;
 	int *map_stats;
-	//i'm going to store the char values as ints and the size
-	//of the map as an int.
 
 	map_stats = (int*)malloc(sizeof(int) * 5);
 	x = 0;
-	while (map[x][0]) // check if more than 1 row
+	while (map[x][0])
 		x++;
 	if (x == 1)
 		return (0);
-	map_stats[3] = (x - 1); //number of rows
+	map_stats[3] = (x - 1);
 	x = 0;
-	while (map[0][x]) // check if 1st row has enough parameters
+	while (map[0][x])
 		x++;
 	if (x < 4)
 		return (0);
-	map_stats[0] = map[0][x - 2];  // the full / fill character
-	map_stats[1] = map[0][x - 3]; // the obstacle character
-	map_stats[2] = map[0][x - 4]; // the empty character
+	map_stats[0] = map[0][x - 2];
+	map_stats[1] = map[0][x - 3];
+	map_stats[2] = map[0][x - 4];
 	x = 0;
 	while (map[1][x])
 	{
 		x++;
 	}
-	map_stats[4] = x; // length of each row.
-
+	map_stats[4] = x;
 	return (map_stats);
 }

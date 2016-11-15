@@ -6,7 +6,7 @@
 /*   By: bmiller <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/14 09:19:59 by bmiller           #+#    #+#             */
-/*   Updated: 2016/11/15 05:55:12 by bmiller          ###   ########.fr       */
+/*   Updated: 2016/11/15 14:13:30 by mgould           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char		*bisquick_in(int rfd)
 			i++;
 			j++;
 		}
-	}			
+	}
 	return (in);
 }
 
@@ -46,7 +46,7 @@ int			*dimensions(char *in_str)
 	int		*dims;
 	int		i;
 	char	*temp;
-	
+
 	meta_offset = linelen(in_str) + 1;
 	temp = (in_str + meta_offset);
 	if ((my_strlen(temp) % 2) != 0)
