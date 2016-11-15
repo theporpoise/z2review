@@ -6,7 +6,7 @@
 /*   By: bmiller <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/14 09:27:43 by bmiller           #+#    #+#             */
-/*   Updated: 2016/11/15 05:53:17 by bmiller          ###   ########.fr       */
+/*   Updated: 2016/11/15 10:11:05 by mgould           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,5 @@ int		*map_stats(char **map);
 int		linelen(char *str);
 char	**fill_map(char **map, int *pos, int *mstats);
 int		*timjose(char **map, int *mstats);
+int		*tj2(char **map, int *mstats);
 #endif

@@ -6,12 +6,13 @@
 /*   By: mgould <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/14 17:56:47 by mgould            #+#    #+#             */
-/*   Updated: 2016/11/14 19:13:42 by mgould           ###   ########.fr       */
+/*   Updated: 2016/11/15 11:55:03 by mgould           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "bisquick.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 int	max_square(char **map, int i, int j, int *mstats)
 {
@@ -21,8 +22,11 @@ int	max_square(char **map, int i, int j, int *mstats)
 
 	sq = 0;
 	if (map[i][j] != mstats[2])
+	{
+		printf("%d ", sq);
 		return (sq);
-	while (map[0][i + sq] && map[j + sq])
+	}
+	while (map[i + sq] && map[1][j + sq])
 	{
 		temp1 = 0;
 		while (temp1 < sq)
@@ -31,14 +35,18 @@ int	max_square(char **map, int i, int j, int *mstats)
 			while (temp2 < sq)
 			{
 				if (map[i + temp1][j + temp2] != mstats[2])
+				{
+					printf("%d ", (sq-1));
 					return (sq - 1);
+				}
 				temp2++;
 			}
-			temp1++
+			temp1++;
 		}
 	sq++;
 	}
-	return (sq);
+	printf("%d ", (sq-1));
+	return (sq - 1);
 }
 
 int	*tj2(char **map, int *mstats)
@@ -56,10 +64,10 @@ int	*tj2(char **map, int *mstats)
 	pos[0] = 0; //holds row where answser is
 	pos[1] = 0; //holds column where answer is
 	pos[2] = 0; //will hold max size
-	while (map[i])
+	while (map[i] && (i < mstats[3]))
 	{
 		j = 0;
-		while (map[i][j])
+		while (map[1][j])
 		{
 			flag = max_square(map, i, j, mstats);
 			if (flag > pos[2])
@@ -70,7 +78,9 @@ int	*tj2(char **map, int *mstats)
 			}
 			j++;
 		}
+		printf("\n");
 		i++;
 	}
+	 printf("bsq:%d, x:%d, y:%d", pos[2], pos[0], pos[1]);
 	return (pos);
 }

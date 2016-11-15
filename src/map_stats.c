@@ -6,7 +6,7 @@
 /*   By: mgould <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/14 13:47:22 by mgould            #+#    #+#             */
-/*   Updated: 2016/11/14 14:07:39 by mgould           ###   ########.fr       */
+/*   Updated: 2016/11/15 10:08:10 by mgould           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ int	*map_stats(char **map)
 		x++;
 	if (x < 4)
 		return (0);
-	map_stats[0] = map[0][x - 1];  // the full / fill character
-	map_stats[1] = map[0][x - 2]; // the obstacle character
-	map_stats[2] = map[0][x - 3]; // the empty character
+	map_stats[0] = map[0][x - 2];  // the full / fill character
+	map_stats[1] = map[0][x - 3]; // the obstacle character
+	map_stats[2] = map[0][x - 4]; // the empty character
 	x = 0;
 	while (map[1][x])
 	{
