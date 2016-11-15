@@ -6,7 +6,7 @@
 /*   By: bmiller <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/14 09:19:59 by bmiller           #+#    #+#             */
-/*   Updated: 2016/11/14 12:21:03 by bmiller          ###   ########.fr       */
+/*   Updated: 2016/11/14 22:39:05 by bmiller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,27 +17,41 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 
-char		**bisquick(int rfd)
+char		*bisquick_in(rfd)
 {
-	int		i[3];
+	int		i;
+	int		j;
 	char	buf[1];
 	size_t	bytes_read;
-	char	**map;
+	char	*in;
 
-	map = (char**)(malloc(sizeof(char*) * 2));
-	i[0] = 0;
+	in = (char*)(malloc(2));
+	j = 0;
 	while ((bytes_read = read(rfd, buf, 1)))
 	{
-		i[2] = 0;
-		while (i[2] < (int)bytes_read)
+		i = 0;
+		while (i < (int)bytes_read)
 		{
-			map[i[1]] = my_strcat(map[i[1]], (char*)(malloc(1)));
-			map[i[1]][i[0]] = buf[i[2]];
-			if (buf[i[2]] == '\n')
-				i[1]++;
-			i[2]++;
-			i[0]++;
+			in = my_strcat(in, (char*)(malloc(1)));
+			in[j] = buf[i];
+			i++;
+			j++;
 		}
 	}
-	return (map);
+	return (in);
+}
+
+int			*dimensions(char *in_str)
+{
+	int		meta_offset;
+	int
+}
+
+char		**bisquick(char *in_str, size_t x_dim, size_t y_dim)
+{
+	int		i;
+	int		j;
+	int		k;
+	char	arr[y_dim][x_dim];
+	
 }
