@@ -6,7 +6,7 @@
 /*   By: bmiller <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/14 09:19:59 by bmiller           #+#    #+#             */
-/*   Updated: 2016/11/16 07:29:31 by bmiller          ###   ########.fr       */
+/*   Updated: 2016/11/16 08:08:05 by bmiller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,13 +69,9 @@ int			*dimensions(char *in_str)
 
 char		**bisquick(char *in_str, size_t x_dim, size_t y_dim)
 {
-	int		*x;
-	int		y;
 	int		i;
 	char	**arr;
 
-	x = 0;
-	y = 0;
 	i = 0;
 	arr = (char**)(malloc(sizeof(char*) * y_dim + 1));
 	while (i <= (int)y_dim)
@@ -83,27 +79,11 @@ char		**bisquick(char *in_str, size_t x_dim, size_t y_dim)
 		arr[i] = (char*)(malloc((x_dim + 1)));
 		i++;
 	}
-	i = 0;
-	while (in_str[i])
-	{
-		if (in_str[i] == '\n')
-		{
-			arr[y][x] = in_str[i];
-			arr[y][x + 1] = '\0';
-			y++;
-			x = 0;
-		}
-		else
-		{
-			arr[y][x] = in_str[i];
-			x++;
-		}
-		i++;
-	}
+	bisquick_pop(&arr, in_str);
 	return (arr);
 }
 
-int		validate(int *dims, char *bisquick_in, char **bisquick)
+int			validate(int *dims, char *bisquick_in, char **bisquick)
 {
 	if ((dims == NULL) || (bisquick_in == NULL) || bisquick[0][0] == '0') //|| \
 //		(dims[1] - 1) != my_atoi(bisquick[0], 3))
@@ -112,4 +92,31 @@ int		validate(int *dims, char *bisquick_in, char **bisquick)
 		return (-1);
 	}
 	return (0);
+}
+
+void		bisquick_pop(char ***arr, char *in_str)
+{
+	int		x;
+	int		y;
+	int		i;
+
+	x = 0;
+	y = 0;
+	i = 0;
+	while (*(in_str + i))
+	{
+		if (in_str[i] == '\n')
+		{
+			(*arr)[y][x] = in_str[i];
+			(*arr)[y][x + 1] = '\0';
+			y++;
+			x = 0;
+		}
+		else
+		{
+			(*arr)[y][x] = in_str[i];
+			x++;
+		}
+		i++;
+	}
 }
