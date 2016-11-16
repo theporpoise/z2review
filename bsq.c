@@ -4,6 +4,7 @@
 #include <fcntl.h>
 #include <sys/types.h>
 #include <sys/stat.h>
+#include <stdio.h>
 
 int		main(int argc, char **argv)
 {
@@ -13,12 +14,6 @@ int		main(int argc, char **argv)
 	int		*mstats;
 	int		i;
 	int		*pos;
-
-/* creating validator for input is last step.
- *In case of an invalid map, your program should display map error on the error
- output followed by a line break. Your program will then move on to the next
- map.
- */
 
 	i = 1;
 	if (argc >= 2)
@@ -37,12 +32,19 @@ int		main(int argc, char **argv)
 	}
 	else
 	{
+	printf("one\n");
 	map = bisquick_in(0);
+	printf("two\n");
 	dims = dimensions(map);
+	printf("three\n");
 	map_a = bisquick(map, dims[0], dims[1]);
+	printf("four\n");
 	mstats = map_stats(map_a);
+	printf("five\n");
 	pos = tj2(map_a, mstats);
+	printf("sixe\n");
 	map_a = fill_map(map_a, pos, mstats);
+	printf("seven\n");
 	print_map(map_a);
 	}
 
