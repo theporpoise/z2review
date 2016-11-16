@@ -6,7 +6,7 @@
 /*   By: bmiller <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/14 09:19:59 by bmiller           #+#    #+#             */
-/*   Updated: 2016/11/16 07:23:55 by bmiller          ###   ########.fr       */
+/*   Updated: 2016/11/16 07:29:31 by bmiller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ int			*dimensions(char *in_str)
 
 char		**bisquick(char *in_str, size_t x_dim, size_t y_dim)
 {
-	int		x;
+	int		*x;
 	int		y;
 	int		i;
 	char	**arr;
