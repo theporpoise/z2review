@@ -6,7 +6,7 @@
 /*   By: mgould <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/14 14:31:36 by mgould            #+#    #+#             */
-/*   Updated: 2016/11/14 15:37:33 by mgould           ###   ########.fr       */
+/*   Updated: 2016/11/15 19:57:55 by mgould           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,11 @@ char	**fill_map(char **map, int *pos, int *mstats)
 	int i;
 	int j;
 
+	if (pos[0] == 0 && pos[1] == 0 && pos[2] == 0 &&
+		map[1][0] != mstats[1])
+	{
+		map[1][0] = mstats[0];
+	}
 	i = 0;
 	j = 0;
 	while (i < pos[2])

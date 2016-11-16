@@ -32,7 +32,6 @@ int		main(int argc, char **argv)
 		pos = tj2(map_a, mstats);
 		map_a = fill_map(map_a, pos, mstats);
 		print_map(map_a);
-		my_putstr("\n");
 		i++;
 		}
 	}
