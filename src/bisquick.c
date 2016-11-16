@@ -6,7 +6,7 @@
 /*   By: bmiller <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/14 09:19:59 by bmiller           #+#    #+#             */
-/*   Updated: 2016/11/15 21:20:05 by mgould           ###   ########.fr       */
+/*   Updated: 2016/11/16 07:23:55 by bmiller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,9 @@ char		*bisquick_in(int rfd)
 	size_t	bytes_read;
 	char	*in;
 
-	in = (char*)(malloc(9000000000));
+	if (rfd == -1)
+		return (NULL);
+	in = (char*)(malloc(900000000));
 	j = 0;
 	while ((bytes_read = read(rfd, buf, 1)))
 	{
@@ -99,4 +101,15 @@ char		**bisquick(char *in_str, size_t x_dim, size_t y_dim)
 		i++;
 	}
 	return (arr);
+}
+
+int		validate(int *dims, char *bisquick_in, char **bisquick)
+{
+	if ((dims == NULL) || (bisquick_in == NULL) || bisquick[0][0] == '0') //|| \
+//		(dims[1] - 1) != my_atoi(bisquick[0], 3))
+	{
+		my_putstr("map error\n");
+		return (-1);
+	}
+	return (0);
 }
