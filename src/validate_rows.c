@@ -1,34 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   my_atoi.c                                          :+:      :+:    :+:   */
+/*   validate_rows.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mgould <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/16 07:45:25 by mgould            #+#    #+#             */
-/*   Updated: 2016/11/16 11:40:05 by mgould           ###   ########.fr       */
+/*   Created: 2016/11/16 10:39:37 by mgould            #+#    #+#             */
+/*   Updated: 2016/11/16 11:39:40 by mgould           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	my_atoi(char *str)
-{
-	int number;
+#include "bisquick.h"
+#include <unistd.h>
 
-	number = 0;
-	while (*str == ' ' || *str == '\t' || *str == '\n' ||
-			*str == '\v' || *str == '\f' || *str == '\r')
-		str++;
-	if (*str == '-')
+int	validate_rows(char **map, int *mstats)
+{
+	int i;
+	int j;
+
+	i = 1;
+	j = 0;
+	while (map[i] && (i < mstats[3]))
 	{
-		return (-1);
+		j = 0;
+		while (map[1][j])
+		{
+			if (!(map[i][j] == mstats[0] || map[i][j] == mstats[1] ||
+				map[i][j] == mstats[2] || map[i][j] == '\n'
+				|| map[i][j] == '\0'))
+			{
+				write(2, "map error\n", 10);
+				return (-1);
+			}
+			j++;
+		}
+		i++;
 	}
-	else if (*str == '+')
-		str++;
-	while ((*str > 47) && (*str < 58) && ((str + 4) != '\0'))
-	{
-		number *= 10;
-		number += *str - '0';
-		str++;
-	}
-	return (number);
+	return (0);
 }

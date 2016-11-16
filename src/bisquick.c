@@ -6,7 +6,7 @@
 /*   By: bmiller <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/14 09:19:59 by bmiller           #+#    #+#             */
-/*   Updated: 2016/11/16 08:08:05 by bmiller          ###   ########.fr       */
+/*   Updated: 2016/11/16 13:13:54 by mgould           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <fcntl.h>
 #include <sys/types.h>
 #include <sys/stat.h>
+#include <stdio.h>
 
 char		*bisquick_in(int rfd)
 {
@@ -26,7 +27,10 @@ char		*bisquick_in(int rfd)
 	char	*in;
 
 	if (rfd == -1)
+	{
+		write(2, "map error\n", 10);
 		return (NULL);
+	}
 	in = (char*)(malloc(900000000));
 	j = 0;
 	while ((bytes_read = read(rfd, buf, 1)))
@@ -58,7 +62,10 @@ int			*dimensions(char *in_str)
 	while (*temp)
 	{
 		if (linelen(temp) != dims[0])
+		{
+			write(2, "map error\n", 10);
 			return (NULL);
+		}
 		temp += (linelen(temp) + 1);
 		dims[1]++;
 	}
@@ -85,10 +92,10 @@ char		**bisquick(char *in_str, size_t x_dim, size_t y_dim)
 
 int			validate(int *dims, char *bisquick_in, char **bisquick)
 {
-	if ((dims == NULL) || (bisquick_in == NULL) || bisquick[0][0] == '0') //|| \
-//		(dims[1] - 1) != my_atoi(bisquick[0], 3))
+	if ((dims == NULL) || (bisquick_in == NULL) || (bisquick[0][0] == '0') || \
+		(dims[1] - 1) != my_atoi(bisquick[0]) || (my_atoi(bisquick[0]) == 0))
 	{
-		my_putstr("map error\n");
+		write(2, "map error\n", 10);
 		return (-1);
 	}
 	return (0);

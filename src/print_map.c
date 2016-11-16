@@ -6,17 +6,22 @@
 /*   By: bmiller <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/14 12:13:31 by bmiller           #+#    #+#             */
-/*   Updated: 2016/11/15 20:00:58 by mgould           ###   ########.fr       */
+/*   Updated: 2016/11/16 11:36:04 by mgould           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "bisquick.h"
+#include <unistd.h>
 
 void	print_map(char **map)
 {
 	int		i;
 
 	i = 1;
+	if (map[1][0] == '\0')
+	{
+		write(2, "map error\n", 10);
+	}
 	while (**(map + i))
 	{
 		my_putstr(*(map + i));
