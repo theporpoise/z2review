@@ -6,10 +6,11 @@
 #    By: mgould <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/10 14:05:57 by mgould            #+#    #+#              #
-#    Updated: 2016/11/16 11:45:23 by mgould           ###   ########.fr        #
+#    Updated: 2016/11/16 18:23:09 by mgould           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+NAME = bsq
 HEADER = include
 FLAG = -Wall -Wextra -Werror
 OPTION = -I$(HEADER)
@@ -20,8 +21,10 @@ SRC = bsq.c $(O)bisquick.c $(O)print_map.c $(O)map_stats.c \
 	$(O)my_atoi.c $(O)tj3.c $(O)validate_rows.c
 DEST = -o bsq
 
-all:
-	gcc $(FLAG) $(OPTION) $(SRC) $(DEST)
+all: $(NAME)
+
+$(NAME):
+	gcc $(FLAG) $(OPTION) $(SRC) -o $(NAME)
 
 clean:
 	rm -f bsq.o
