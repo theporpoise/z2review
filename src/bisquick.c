@@ -6,7 +6,7 @@
 /*   By: bmiller <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/14 09:19:59 by bmiller           #+#    #+#             */
-/*   Updated: 2016/11/16 13:13:54 by mgould           ###   ########.fr       */
+/*   Updated: 2016/11/16 18:28:08 by mgould           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char		*bisquick_in(int rfd)
 		write(2, "map error\n", 10);
 		return (NULL);
 	}
-	in = (char*)(malloc(900000000));
+	in = (char*)(malloc(20000000));
 	j = 0;
 	while ((bytes_read = read(rfd, buf, 1)))
 	{
