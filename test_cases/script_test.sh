@@ -17,7 +17,7 @@ echo "4est\neee\neee\neee\neee" | .././bsq
 
 ./map_gen.pl 1 1 0 | .././bsq
 ./map_gen.pl 1 1 9 | .././bsq
-.././bsq testmap2 testmap3
+.././bsq woops testmap_oops testmap_oops2 testmap_oops3
 #.././bsq testmap1 testmap2 testmap3 testmap4
 
 
